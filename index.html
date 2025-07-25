@@ -5,8 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calorie Tracker</title>
     <link rel="stylesheet" href="globals.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   </head>
-  <body>
-    <h1 class="headline">Calorie Tracker</h1>
+  <script src="JSAct.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    a{
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+  <body id="mainp">
+    <div id="mainpt">
+      <div>  
+        <h1 class="headline loadt">
+          <span>C</span>
+          <span>a</span>
+          <span>l</span>
+          <span>o</span>
+          <span>r</span>
+          <span>i</span>
+          <span>e</span>
+          <span>&nbsp;</span>
+          <span>T</span>
+          <span>r</span>
+          <span>a</span>
+          <span>c</span>
+          <span>k</span>
+          <span>e</span>
+          <span>r</span>
+        </h1>
+      </div>
+      <h2 class="h2" style="color: white;">Track Your Calories, Reach Your Goals!</h2></div>
+      <div class="b2">
+        <button type="button" class="button"><a href="inscriere.html" style="text-decoration: none;color: white;">Sign Up</a></button>
+      </div>
+    </div>
+    <section style="margin: 0 0;">
+      <nav>
+        <div class="navbar" style="padding: 0;">
+          <div class="container nav-container" style="max-width: 100%;padding:0;">
+            <input type="checkbox" id="checkbox">
+            <div class="hamburger-lines">
+              <span class="line1"></span>
+              <span class="line2"></span>
+              <span class="line3"></span>
+            </div>
+            <div class="menucnt">
+              <li><a href="calculator.html">Calculator de calorii</a></li>
+              <li><a href="obiectiv.html">Obiectiv personalizat</a></li>
+              <li><a href="retete.html">Rețete pe gustul tău</a></li>
+              <li><a href="#">Antrenamente și activitate fizică</a></li>
+              <li><a href="jurnal.html">Jurnal zilnic</a></li>
+              <li><a href="retete.html">Adaugă rețeta ta</a></li>
+            </div> 
+            <button type="button" class="button b1" data-toggle="modal" data-target="#conectare">Sign In</button>
+            <form>
+              <div class="modal fade" tabindex="-1" role="dialog" id="conectare" aria-labelledby="modalconectare" aria-hidden="true" >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-between">
+                      <div class="modal-title inter" id="modalconectare" style="color: white;"><h3>Conectează-te</h3></div>
+                    </div>
+                    <div class="modal-body inter"style="color: white;font-size: 20px;" id="sgni">
+                      <div>
+                        <p>Email</p>
+                        <input type="email" placeholder="Introdu email" required>
+                      </div>
+                      <div>
+                        <img src="conectaref.png" alt="fruit" style="transform: rotate(25deg);">
+                      </div>
+                      <div>
+                        <p>Parolă</p>
+                        <input type="password" placeholder="Introdu parolă" required>
+                      </div>
+                    </div>
+                    <div class="modal-footer d-flex flex-column d-flex justify-content-center">
+                      <input type="submit" class="button" value="Submit" style="font-size: 20px;">
+                      <div style="color: white;"><p>Nu ai cont?<a href="inscriere.html" style="color: #0e597e;">Înregistrează-te</a></p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+      
+    </section>
+    <section style="background-color: white;border-top-left-radius: 10px;border-top-right-radius: 10px;" class="mins";>
+      <div>
+        <h2 class="font1"><img src="ctrack.png" alt="goal" style="width: 190px;float:left;">&nbsp;&nbsp;&nbsp;Fie că vrei să slăbești, să-ți menții greutatea sau să te îngrași sănătos, aplicația noastră te ajută să îți atingi obiectivele nutriționale printr-o platformă completă, simplu de folosit și adaptată nevoilor tale.</h2>
+      </div>
+    </section>
+    <section style="background-color: white;" class="mins">
+      <h2 class="font2">&nbsp;&nbsp;Ce poți face cu Calorie Tracker?</h2>
+      <ul>
+        <div class="font3">
+          <li style="font-size: 35px;padding-bottom: 10px;">&nbsp;Stabilește-ți obiectivul în funcție de profilul tău <i class="fa-solid fa-chevron-down"></i> </li>
+          <h3 class="flh2">&nbsp;&nbsp;Introdu datele tale (vârstă, sex, greutate, înălțime, nivel de activitate) și alege scopul tău:<br>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-bullseye pulse-element"></i> Slăbire&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-bullseye pulse-element"></i> Menținere&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-bullseye pulse-element"></i> Creștere în greutate <br>&nbsp;&nbsp;Aplicația va calcula automat necesarul tău caloric zilnic!</h3>
+        </div>
+        <div class="font3">
+          <li style="font-size: 35px;padding-bottom: 10px;">&nbsp;Calculează caloriile alimentelor <i class="fa-solid fa-chevron-down"></i></li>
+          <h3 class="flh2">&nbsp;&nbsp;Ai mâncat ceva și nu știi câte calorii are? Caută în baza noastră de date sau adaugă tu alimentele. Totul e înregistrat în jurnalul zilnic.</h3>
+        </div>
+        <div class="font3">
+          <li style="font-size: 35px;padding-bottom: 10px;">&nbsp;Planifică mese inteligente <i class="fa-solid fa-chevron-down"></i></li>
+          <h3 class="flh2">&nbsp;&nbsp;Primește recomandări de rețete personalizate în funcție de câte calorii vrei să consumi la o masă.  Ai libertate completă: poți introduce propriile rețete și salva combinațiile tale preferate.</h3>
+        </div>
+        <div class="font3">
+          <li style="font-size: 35px;padding-bottom: 10px;">&nbsp;Monitorizează activitatea fizică <i class="fa-solid fa-chevron-down"></i></li>
+         <h3 class="flh2">&nbsp;&nbsp;Te antrenezi? Faci yoga? Adaugă tipul de exercițiu și durata – noi îți spunem câte calorii ai ars.</h3>
+        </div>
+        <div class="font3">
+          <li style="font-size: 35px;padding-bottom: 10px;">&nbsp;Urmărește progresul tău <i class="fa-solid fa-chevron-down"></i></li>
+          <h3 class="flh2">&nbsp;&nbsp;Vezi în fiecare zi cât ai consumat, cât ți-a mai rămas din obiectiv și cum evoluezi pe termen lung. Cu grafice simple și clare, ții controlul fără stres.</h3>
+        </div>
+      </ul>
+    </section>
+    <section style="background-color: white; z-index: 1;position: relative;">
+      <div style="text-align: center;color: #1E2F97;">
+        <h2 class="inria-serif-light" style="font-size: 45px;font-weight: 200;padding-top: 40px;">Totul într-un singur loc! <br><h3 class="nothing-you-could-do-regular" style="margin-top: 40px; margin-bottom: 40px;">Simplu. Eficient. Personalizat.</h3></h2>
+      </div>
+      <div class="pdiv">
+        <h2 style="text-align: center;font-weight: 200;" class="inria-serif-light">Fiecare decizie pe care o iei în alimentație și mișcare contează. <br> Calorie Tracker te ajută să le faci conștient și organizat.</h2>
+      </div>
+      <div style="text-align: center;color: #1E2F97;">
+        <h2 class="inria-serif-light" style="font-size: 45px;font-weight: 200; margin-bottom: 40px;margin-top: 40px;">Ești gata să începi?</h2>
+      </div>
+      <div class=" d-flex align-items-end justify-content-center" >
+        <button type="button" class="button" style="width: 8em;"><a href="inscriere.html" style="text-decoration: none;color: white;">Creează-ți contul acum!</a></button>
+      </div>
+    </section>
   </body>
-</html>
+  </html>

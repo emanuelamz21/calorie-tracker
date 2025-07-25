@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <title>Inscriere</title>
+        <link rel="stylesheet" href="globals.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body class="bodyr">
+        <header class="hd">
+            <div><h1>Înregistrare</h1></div>
+        </header>
+        <div class="sectionr p1">
+            <div><p style="margin-top: 50px;margin-bottom:60px ;font-size: 25px;"><b> <i class=" fa-solid fa-user"></i> Date de autentificare</b></p></div>
+                <div>
+                    <p><i class="fa-solid fa-envelope"></i>Email:</p>
+                    <input type="email" placeholder="Introdu email" required>
+                    </div>
+                <div>
+                   <p><i class="fa-solid fa-lock"></i>Parolă:</p>
+                   <input type="password" placeholder="Introdu parolă" id="pwd" name="pwd" required>
+                </div>
+        </div>
+        <form class="sectionr" style="margin-left: 302px;margin-right: 302px;">
+            <section class="p2">
+             <div><p style="padding-top: 10px; font-size: 25px;"><b><i class="fa-regular fa-circle-user" style="color:white"></i>&nbsp; Date personale:</b></p></div>
+             <div>
+                 <p>Nume:</p>
+                 <input type="text" placeholder="Introdu nume" required>
+             </div>
+             <div>
+               <p>Prenume:</p>
+                 <input type="text" placeholder="Introdu prenume" required>
+             </div>
+            
+             <div>
+                 <p>Număr de telefon:</p>
+                 <input type="tel" id="phone" name="phone" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" placeholder="Telefon(ex.0000-000-000)">
+             </div>
+             <div>
+                 <p >Vârstă:</p>
+                 <input type="number" id="age" min="16" max="99" step="1">
+             </div>
+             <div><p><i class="fa-solid fa-venus-mars" style="color: white;"></i>&nbsp;Sexul:</p></div>
+             <div>
+                <input type="radio" name="radio" value="Bărbat" id="Bărbat">
+                <label for="Bărbat">Bărbat&nbsp;&nbsp;</label>
+                <input type="radio" name="radio" value="Femeie" id="Femeie">
+                <label for="Femeie">Femeie&nbsp;&nbsp;</label>
+                <input type="radio" name="radio" value="Altul" id="Altul">
+                <label for="Altul">Altul&nbsp;&nbsp;</label>
+             </div>
+            </section>
+            <section class="p3">
+                <div>
+                 <p >Greutate actuală(kg):</p>
+                 <input type="number" id="weight" min="20" max="200" step="1">
+                </div>
+                <div>
+                 <p>Înalțime(cm);</p>
+                 <input type="number" name="height" id="height" min="100" max="300" step="1">
+                </div>
+                <div><p>Nivel de activitate fizică:</p></div>
+                <div>
+                 <input type="radio" name="radio" value="Sedentar" id="Sedentar">
+                 <label for="Sedentar">Sedentar&nbsp;&nbsp;</label>
+                 <input type="radio" name="radio" value="Moderat" id="Moderat">
+                 <label for="Moderat">Moderat Activ&nbsp;&nbsp;</label>
+                 <input type="radio" name="radio" value="Activ" id="Activ">
+                 <label for="Activ">Foarte activ&nbsp;&nbsp;</label>
+                </div>
+                <div><p>Obiectiv:</p></div>
+                <div>
+                    <input type="radio" name="radio" value="Slab">
+                    <label for="radio">Vreau să slăbesc <br>&nbsp;&nbsp;&#9662;Scade în greutate într-un mod sănătos și echilibrat.</label><br>
+                    <input type="radio" name="radio" value="Mentinut">
+                    <label for="radio">Vreau să îmi mențin greutatea <br>&nbsp;&nbsp;= Păstrează-ți forma actuală și rămâi în echilibru.</label><br>
+                    <input type="radio" name="radio" value="Gras">
+                    <label for="radio">Vreau să cresc în greutate <br>&nbsp;&nbsp;&#9652;Adaugă masă sănătoasă și energie în stilul tău de viață.</label>
+                </div>
+                <div><input type="submit" name="Înscrie-te" id="Inscriere"></div>
+            </section>
+        </form>
+    </body>
+</html>

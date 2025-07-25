@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calorie Tracker-Jurnal</title>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+  <script src="../path/to/fullcalendar/index.global.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <style>
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  </style>
+  <body class="bodyr">
+    <section class="j1">
+      <h1 class="fade-in-left">Jurnalul tău zilnic</h1>
+      <div>
+        <h2 style="color: #1aa6ece4; font-weight: 400; position: relative;" class="inter">Rezumatul caloric al zilei
+          <div class="t1">
+            <label for="Obiectiv"><i class="fa-solid fa-bullseye"></i> Obiectiv caloric zilnic</label>
+            <div>
+              <input type="number" id="Obiectiv" value="*">
+              <span class="kcal">kcal</span>
+            </div>
+            <label for="Consumate"><i class="fa-solid fa-utensils"></i> Calorii consumate</label>
+            <div>
+              <input type="number" id="Consumate" value="*" >
+              <span class="kcal">kcal</span>
+            </div>
+            <label for="Arse"><i class="fa-solid fa-fire-flame-curved"></i> Calorii arse prin activitate fizică</label>
+            <div>
+              <input type="number" id="Arse" value="*" >
+              <span class="kcal">kcal</span>
+            </div>
+            <label for="Ramase"><i class="fa-solid fa-scale-unbalanced-flip"></i> Calorii rămase</label>
+            <div>
+              <input type="number" id="Ramase" readonly>
+              <span class="kcal">kcal</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar"  id="progressbar" value=""></div>
+            </div>
+            <p id="procent">0%</p>
+          </div>
+        </h2>
+      </div>
+      <div class="t2"><h2>Calendar</h2></div>
+  <!---
+      <div class="card flex not-prose p-4 w-full">
+        <div id="calendar-custom"></div>
+        </div>
+        
+
+        <button type="button" class="btn hidden" id="modalTrigger"  aria-haspopup="dialog" aria-expanded="false" aria-controls="calendar-event-modal" data-overlay="#calendar-event-modal"></button>
+
+        
+        <div id="calendar-event-modal" class="overlay modal overlay-open:opacity-100 overlay-open:duration-300 hidden" role="dialog" tabindex="-1">
+          <div class="modal-dialog overlay-open:opacity-100 overlay-open:duration-300">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Event</h3>
+                <button type="button" class="btn btn-text btn-circle btn-sm absolute end-3 top-3" aria-label="Close" data-overlay="#calendar-event-modal"><span class="icon-[tabler--x] size-4"></span></button>
+              </div>
+              <form id="eventForm">
+                <div class="modal-body pt-0">
+                  <div class="mb-4">
+                    <label class="label-text" for="eventTitle"> Add event title below </label>
+                    <input type="text" id="eventTitle" class="input" placeholder="Event title" required />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-soft btn-secondary" data-overlay="#calendar-event-modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    -->
+    </section>
+    <section class="j2">
+      <div class="d-flex justify-content-between">
+        <p></p>
+        <div id="msz">Mesele zilei</div>
+        <p></p>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="btdish-m bounce" style="left: 20px;">
+          <button class="btdish-sm" data-toggle="modal" data-target="#MD">Mic dejun</button>
+        </div>
+
+        <div><button class="btn-ad" data-toggle="modal" data-target="#adal">Adaugă aliment</button></div>
+
+        <div class="btdish-m bounce" style="background-color:#1aa6ec5d; right: 20px;">
+          <button class="btdish-sm" data-toggle="modal" data-target="#CN">Cină</button>
+        </div>
+      </div>
+
+      <div class="modal fade" id="MD" tabindex="-1" role="dialog" aria-labelledby="MicDejun" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between" >
+              <h3 class="inter " style="color: white;">Mic dejun</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: transparent;color: white;border: none;">
+                <span aria-hidden="true"><i class="fa-solid fa-xmark" style="font-size: 20px;color: white;"></i></span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex justify-content-start row" id="contal">
+                <div id="adga" class="col-6" style="display: flex;"></div>
+                <span style=" color: white;" id="kal" class="col"></span>
+                <button class="button" style="border: none;background: transparent; width:auto; height: auto;" id="delal" onclick="DelAliment()" ><i class="fa-solid fa-xmark" style="color: white; font-size: 0.5em;"></i></button>
+                <button type="button" style="border: none;background-color: transparent;padding:0 8px;" onclick="AddAliment()" class="d-flex justify-content-start col-10"><i class="fa-solid fa-plus" style="color: white; padding-top: 5px;">&nbsp;</i><p style="color: white;">Adaugă mâncare</p></button>
+              </div>
+              <div class="d-flex justify-content-end" style="position: relative;">
+                <label for="Total" style="margin-right: 5px; color: white;">Total:</label>
+                <input type="number"  id="Total" style="width: 70px;border: none;background: transparent;">
+                <span style="position:absolute; right:3px; color: white;">kcal</span>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="button" data-dismiss="modal"style="font-size: 20px;">Închide</button>
+              <button type="button" class="button" style="font-size: 20px;">Salvează</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="CN" tabindex="-1" role="dialog" aria-labelledby="Cina" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between" >
+              <h3 class="inter " style="color: white;">Cină</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: transparent;color: white;border: none;">
+                <span aria-hidden="true"><i class="fa-solid fa-xmark" style="font-size: 20px;color: white;"></i></span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex justify-content-start row">
+                <div id="adga" class="col-6"></div>
+                <span style=" color: white;" id="kal" class="col"></span>
+                <button class="button" style="border: none;background: transparent; display: none; width:auto; height: auto;" id="delal" onclick="DelAliment()" ><i class="fa-solid fa-xmark" style="color: white; font-size: 0.5em;"></i></button>
+                <button type="button" style="border: none;background-color: transparent;padding:0 8px;" onclick="AddAliment()" class="d-flex justify-content-start col-10"><i class="fa-solid fa-plus" style="color: white; padding-top: 5px;">&nbsp;</i><p style="color: white;">Adaugă mâncare</p></button>
+              </div>
+              <div class="d-flex justify-content-end" style="position: relative;">
+                <label for="Total" style="margin-right: 5px; color: white;">Total:</label>
+                <input type="number"  id="Total" style="width: 70px;border: none;background: transparent;">
+                <span style="position:absolute; right:3px; color: white;">kcal</span>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="button" data-dismiss="modal"style="font-size: 20px;">Închide</button>
+              <button type="button" class="button" style="font-size: 20px;">Salvează</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="adal" tabindex="-1" role="dialog" aria-labelledby="modaladal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between">
+              <div class="modal-title inter" id="modaladal" style="color: white;" ><h3>Adaugă aliment</h3></div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: transparent;color: white;border: none;">
+                <span aria-hidden="true"><i class="fa-solid fa-xmark" style="font-size: 20px;color: white;"></i></span>
+              </button>
+            </div>
+            <div class="modal-body inter" style="color: white;font-size: 20px;">
+              <p>Selectează masa:</p>
+              <input type="radio" id="MD">
+              <label for="MD"><a href="#">Mic Dejun</a></label>
+              <input type="radio" id="PZ">
+              <label for="PZ"><a href="#">Prânz</a></label>
+              <input type="radio" id="GS">
+              <label for="GS"><a href="#">Gustări</a></label>
+              <input type="radio" id="CN">
+              <label for="CN"><a href="#">Cină</a></label>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="button" style="font-size: 20px;"data-toggle="modal" data-target="#urmatorul">Următorul</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal fade" id="urmatorul" tabindex="-1" role="dialog" aria-labelledby="modalurm" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between">
+              <div class="modal-title inter" id="modalurm"  style="color: white;">Aliment</div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: transparent;color: white;border: none;">
+                <span aria-hidden="true">Înapoi</span>
+              </button>
+            </div>
+            <div class="modal-body inter" style="color: white;font-size: 20px;padding: 4vh 10vh;">
+              <h4>Ce aliment ai cosumat?</h4>
+              <label for="alim"></label>
+              <input type="text" id="alim" style="background:linear-gradient(95deg, #1aa6ec98,#797df6); border-color: white;border-width: 0.01em;">
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="button" style="font-size: 20px;"data-toggle="modal" data-target="#urmatorul1">Următorul</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="urmatorul1" tabindex="-1" role="dialog" aria-labelledby="modalurm1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between">
+              <div class="modal-title inter" id="modalurm1"  style="color: white;">Cantitate</div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: transparent;color: white;border: none;">
+                <span aria-hidden="true">Înapoi</span>
+              </button>
+            </div>
+            <div class="modal-body inter" style="color: white;font-size: 15px;padding: 4vh 10vh;">
+              <h4>Ce cantitate ai consumat?(grame)</h4>
+              <label for="cant"></label>
+              <input type="number" id="cant" style="background:linear-gradient(95deg, #1aa6ec98,#797df6); border-color: white;border-width: 0.01em;">
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="button" style="font-size: 20px;"data-toggle="modal" data-target="#urmatorul2">Următorul</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="urmatorul2" tabindex="-1" role="dialog" aria-labelledby="modalurm2" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between">
+              <div class="modal-title inter" id="modalurm2"  style="color: white;">Calcul calorii</div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: transparent;color: white;border: none;">
+                <span aria-hidden="true">Înapoi</span>
+              </button>
+            </div>
+            <div class="modal-body inter" style="color: white;font-size: 15px;padding: 4vh 10vh;">
+              <h4>Calorii aliment</h4>
+              <p>Acest aliment are aproximativ <var>x</var> kcal pentru canitatea introdusă</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="button close" style="font-size: 20px;"data-dismiss="modal" data-target="#urmatorul3" aria-label="Close">Salvează</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <div class="btdish-m bounce" style="background-color:#1aa6ec5d; right: 30px;">
+         <button class="btdish-sm" data-toggle="modal" data-target="#PZ">Prânz</button>
+        </div>
+
+        <p></p>
+
+        <div class="btdish-m bounce" style="left: 30px;">
+          <button class="btdish-sm" data-target="#GS" data-toggle="modal">Gustări</button>
+        </div>
+      </div>
+
+      <div class="modal fade" id="PZ" tabindex="-1" role="dialog" aria-labelledby="Pranz" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between">
+              <h3 class="inter" style="color: white;">Prânz</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: transparent;color: white;border: none;">
+                <span aria-hidden="true"><i class="fa-solid fa-xmark" style="font-size: 20px;color: white;"></i></span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex justify-content-start row">
+                <div id="adga" class="col-6"></div>
+                <span style=" color: white;" id="kal" class="col"></span>
+                <button class="button" style="border: none;background: transparent; display: none; width:auto; height: auto;" id="delal" onclick="DelAliment()" ><i class="fa-solid fa-xmark" style="color: white; font-size: 0.5em;"></i></button>
+                <button type="button" style="border: none;background-color: transparent;padding:0 8px;" onclick="AddAliment()" class="d-flex justify-content-start col-10"><i class="fa-solid fa-plus" style="color: white; padding-top: 5px;">&nbsp;</i><p style="color: white;">Adaugă mâncare</p></button>
+              </div>
+              <div class="d-flex justify-content-end" style="position: relative;">
+                <label for="Total" style="margin-right: 5px; color: white;">Total:</label>
+                <input type="number"  id="Total" style="width: 70px;border: none;background: transparent;">
+                <span style="position:absolute; right:3px; color: white;">kcal</span>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="button" data-dismiss="modal"style="font-size: 20px;">Închide</button>
+              <button type="button" class="button" style="font-size: 20px;">Salvează</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="GS" tabindex="-1" role="dialog" aria-labelledby="Gustari" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between">
+              <h3 class="inter " style="color: white;">Gustări</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: transparent;color: white;border: none;">
+                <span aria-hidden="true"><i class="fa-solid fa-xmark" style="font-size: 20px;color: white;"></i></span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex justify-content-start row">
+                <div id="adga" class="col-6"></div>
+                <span style=" color: white;" id="kal" class="col"></span>
+                <button class="button" style="border: none;background: transparent; display: none; width:auto; height: auto;" id="delal" onclick="DelAliment()" ><i class="fa-solid fa-xmark" style="color: white; font-size: 0.5em;"></i></button>
+                <button type="button" style="border: none;background-color: transparent;padding:0 8px;" onclick="AddAliment()" class="d-flex justify-content-start col-10"><i class="fa-solid fa-plus" style="color: white; padding-top: 5px;">&nbsp;</i><p style="color: white;">Adaugă mâncare</p></button>
+              </div>
+              <div class="d-flex justify-content-end" style="position: relative;">
+                <label for="Total" style="margin-right: 5px; color: white;">Total:</label>
+                <input type="number"  id="Total" style="width: 70px;border: none;background: transparent;">
+                <span style="position:absolute; right:3px; color: white;">kcal</span>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="button" data-dismiss="modal"style="font-size: 20px;">Închide</button>
+              <button type="button" class="button" style="font-size: 20px;">Salvează</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="j3">
+      <div id="exf">Exerciții fizice efectuate</div>
+      <div class="t3">
+        <div class="d-flex justify-content-start">
+          <button style="border: none;background-color: transparent;padding:0 8px;"><i class="fa-solid fa-plus" style="color: white; padding-bottom: 10px;"></i></button>
+          <p>Adaugă activitate fizică</p>
+        </div>
+        <div class="d-flex justify-content-end" style="position: relative;">
+          <label for="Total" style="margin-right: 5px;">Total:</label>
+          <input type="number"  id="Total" style="width: 70px;border: none;background: transparent;">
+          <span style="position:absolute; right:3px;">kcal</span>
+        </div>
+      </div>
+    </section>
+    <section class="j4">
+      <canvas id="myChart" style="width:100vh;max-width:100vh" ></canvas>
+    </section>
+  <!--
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const calendarCustomExample = document.getElementById('calendar-custom')
+        let selectedEvent = null
+        let selectedDateInfo = null
+        function addDays(date, days) {
+          const result = new Date(date)
+          result.setDate(result.getDate() + days)
+          return result
+        }
+        function formatDate(date) {
+          return date.toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          })
+        }
+        const today = new Date()
+        const events = [
+          {
+            title: 'Past Event',
+            start: addDays(today, -2).toISOString().split('T')[0],
+            classNames: ['fc-event-info']
+          },
+          {
+            title: 'All Day Event',
+            start: addDays(today, 2).toISOString().split('T')[0],
+            classNames: ['fc-event-info']
+          },
+          {
+            title: 'Long Event',
+            start: addDays(today, 2).toISOString().split('T')[0],
+            end: addDays(today, 5).toISOString().split('T')[0],
+            classNames: ['fc-event-primary']
+          },
+          {
+            title: 'Confirm tech stack',
+            start: addDays(today, 0).toISOString().split('T')[0] + 'T10:00:00',
+            end: addDays(today, 0).toISOString().split('T')[0] + 'T18:00:00',
+            classNames: ['fc-event-success']
+          },
+          {
+            groupId: '999',
+            title: 'Coding session',
+            start: addDays(today, 1).toISOString().split('T')[0] + 'T16:00:00',
+            classNames: ['fc-event-secondary']
+          },
+          {
+            groupId: '999',
+            title: 'Coding session',
+            start: addDays(today, 8).toISOString().split('T')[0] + 'T16:00:00',
+            classNames: ['fc-event-secondary']
+          },
+          {
+            title: 'Conference',
+            start: addDays(today, 9).toISOString().split('T')[0],
+            end: addDays(today, 10).toISOString().split('T')[0],
+            classNames: ['fc-event-primary']
+          },
+          {
+            title: 'Meeting',
+            start: addDays(today, 9).toISOString().split('T')[0] + 'T10:30:00',
+            end: addDays(today, 9).toISOString().split('T')[0] + 'T12:30:00',
+            classNames: ['fc-event-error']
+          },
+          {
+            title: 'Lunch',
+            start: addDays(today, 9).toISOString().split('T')[0] + 'T12:40:00',
+            classNames: ['fc-event-warning']
+          },
+          {
+            title: 'Meeting',
+            start: addDays(today, 9).toISOString().split('T')[0] + 'T14:30:00',
+            classNames: ['fc-event-error']
+          },
+          {
+            title: 'Picnic',
+            start: addDays(today, 12).toISOString().split('T')[0],
+            classNames: ['fc-event-success']
+          },
+          {
+            title: 'Yoga',
+            start: addDays(today, 15).toISOString().split('T')[0],
+            classNames: ['fc-event-info']
+          },
+          {
+            title: 'Credit Card Payment',
+            start: addDays(today, 23).toISOString().split('T')[0],
+            end: addDays(today, 24).toISOString().split('T')[0],
+            classNames: ['fc-event-warning']
+          },
+          {
+            title: 'Meeting with client',
+            start: addDays(today, 27).toISOString().split('T')[0],
+            classNames: ['fc-event-success']
+          },
+          {
+            start: addDays(today, 17).toISOString().split('T')[0],
+            end: addDays(today, 20).toISOString().split('T')[0],
+            display: 'background',
+            classNames: ['fc-event-disabled']
+          }
+        ]
+        const calendarCustom = new FullCalendar.Calendar(calendarCustomExample, {
+          initialView: 'dayGridMonth',
+          initialDate: today.toISOString().split('T')[0],
+          editable: true,
+          dragScroll: true,
+          dayMaxEvents: 2,
+          direction: 'ltr', // use 'rtl' for right-to-left language support
+          eventResizableFromStart: true,
+          selectable: true,
+          headerToolbar: {
+            left: 'prev,next title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+          },
+          buttonText: {
+            month: 'Month',
+            week: 'Week',
+            day: 'Day',
+            list: 'List'
+          },
+          events: events,
+          select: function (info) {
+            // Check if the selected range overlaps with the blocked range
+            const blockedStart = addDays(today, 17).getTime()
+            const blockedEnd = addDays(today, 20).getTime()
+            const selectedStart = info.start.getTime()
+            const selectedEnd = info.end ? info.end.getTime() : selectedStart
+            if (
+              (selectedStart < blockedEnd && selectedEnd > blockedStart) ||
+              (selectedEnd > blockedStart && selectedStart < blockedEnd)
+            ) {
+              alert('Events cannot be added in the blocked date range.')
+              calendarCustom.unselect()
+              return
+            }
+            selectedEvent = null
+            selectedDateInfo = info
+            document.getElementById('modalTitle').textContent = `${formatDate(info.start)}`
+            document.getElementById('eventForm').reset()
+            document.getElementById('modalTrigger').click()
+          },
+          eventClick: function (info) {
+            selectedEvent = info.event
+            document.getElementById('modalTitle').textContent = `${formatDate(info.event.start)}`
+            document.getElementById('eventTitle').value = info.event.title
+            document.getElementById('modalTrigger').click()
+          },
+          eventTimeFormat: {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false // This will use the 24-hour format
+          },
+          allDayText: 'All day'
+        })
+        calendarCustom.render()
+        document.getElementById('eventForm').addEventListener('submit', function (e) {
+          e.preventDefault()
+          const title = document.getElementById('eventTitle').value
+          if (title) {
+            if (selectedEvent) {
+              selectedEvent.setProp('title', title)
+            } else {
+              calendarCustom.addEvent({
+                title: title,
+                start: selectedDateInfo.startStr,
+                end: selectedDateInfo.endStr,
+                allDay: true
+              })
+            }
+            HSOverlay.close('#calendar-event-modal')
+          }
+        })
+      })
+    </script>
+-->
+    <script>
+      //Sumar
+
+      var xValues = ["Proteine","Carbohidrați","Proteine"];
+      var yValues = [50, 49, 44];
+      var barColors = [
+        "rgba(26, 166, 236, 0.596)",
+        "rgb(121, 125, 246)",
+        "rgba(74, 222, 222, 0.6)"
+      ];
+
+      new Chart("myChart", {
+        type: "doughnut",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Sumar zilnic (kcal)"
+          }
+        }
+      });
+
+      //ProgressBar
+
+      const Consumate=document.getElementById('Consumate');
+      const Arse=document.getElementById('Arse');
+      const Obiectiv=document.getElementById('Obiectiv');
+      const Ramase=document.getElementById('Ramase');
+      const progressbar=document.getElementById('progressbar');
+      const procent=document.getElementById('procent');
+
+      function ProgressBar(){
+        const cc=Number(Consumate.value);
+        const ca=Number(Arse.value);
+        const tot=Number(Obiectiv.value);
+
+        const sp=cc+ca;
+        const ram=tot-sp;
+
+        if (tot>0){procentaj=(sp/tot)*100;} 
+        else {procentaj=0;}
+
+        progressbar.style.width=Math.min(procentaj,100)+"%";
+        procent.textContent=procentaj.toFixed(1)+"%";
+        Ramase.value=ram;
+
+        [Consumate,Arse,Obiectiv].forEach(input=> {
+          input.addEventListener('input',ProgressBar);
+        });
+      }
+      ProgressBar();
+
+      //AddAliment
+
+      function AddAliment(){
+
+        const container=document.getElementById('contal');
+        const setc=document.createElement('div');
+        setc.style.paddingBottom="10px";
+
+        const aliment=document.getElementById('adga');
+        
+        const inputaliment=document.createElement('input');
+        inputaliment.type="text";
+        inputaliment.placeholder="Introdu alimentul:";
+        aliment.appendChild(inputaliment);
+
+        const kcal=document.getElementById('kal');
+     
+        const inputkcal=document.createElement('input');
+        inputkcal.type="number";
+        inputkcal.placeholder="Numarul de calorii:";
+        const spankcal=document.createElement('span');
+        spankcal.textContent="kcal";
+
+        kcal.appendChild(inputkcal);
+        kcal.appendChild(spankcal);
+
+        const stergb=document.getElementById('delal');
+        stergb.onclick=function(){
+          container.removeChild(setc);
+        };
+
+        setc.appendChild(aliment);
+        setc.appendChild(kcal);
+        setc.appendChild(stergb);
+
+        container.appendChild(setc);
+      }
+    </script>
+    <script src="JSAct.js" charset="UTF-8"></script>
+  </body>
+</html>

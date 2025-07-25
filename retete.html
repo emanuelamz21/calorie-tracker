@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html style="background: transparent;">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Calorie Tracker-Retete</title>
+        <link rel="stylesheet" href="globals.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <body class="background-balls">
+        <div>
+            <img src="blueber.png" alt="rotate" class="ball">
+            <img src="blueber.png" alt="rotate" class="ball">
+            <img src="blueber.png" alt="rotate" class="ball">
+            <img src="blueber.png" alt="rotate" class="ball">
+            <img src="blueber.png" alt="rotate" class="ball">
+            <img src="blueber.png" alt="rotate" class="ball">
+            <img src="blueber.png" alt="rotate" class="ball">
+            <img src="blueber.png" alt="rotate" class="ball">
+        </div>
+        <section>
+            <div class="d-flex align-items-end" style="color: #797df6d2;text-shadow: 5px 5px 8px hsl(200, 100%, 84%);filter: blur(1px);height: 35rem;">
+                <h1 class="inter" style="font-size: 60px;z-index: -10;";>Rețete sănătoase</h1>
+            </div> 
+        </section>
+        <section class="pg1">
+            <div>
+                <nav class="menu">
+                    <ol>
+                        <li class="menu-item" style="border-top-left-radius: 10px;">
+                            <a href="#" class="cal" style="border-top-left-radius: 10px;">
+                                <i class="ri-fire-line"></i>
+                                <span>Calorii</span>
+                            </a>
+                            <ol class="sub-menu" >
+                                <li class="menu-item item--a">
+                                    <a href="#" class="item--a"><label id="sub">sub 300</label></a>
+                                </li>
+                                <li class="menu-item item--b">
+                                    <a href="#" class="item--b"><label id="intre">300-500</label></a>
+                                </li>
+                                <li class="menu-item item--c">
+                                    <a href="#" class="item--c"><label id="peste">peste 500</label></a>
+                                </li>
+                            </ol>
+                        </li>
+                        
+                        <li class="menu-item">
+                            <a href="#" class="tdp">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Timp de preparare</span>
+                            </a>
+                            <ol class="sub-menu">
+                                <li class="menu-item item--a">
+                                    <a href="#" class="item--a"><label id="m15">&lt;15min</label></a>
+                                </li>
+                                <li class="menu-item item--b">
+                                    <a href="#" class="item--b"><label id="intrem">15-30min</label></a>
+                                </li>
+                                <li class="menu-item item--c">
+                                    <a href="#" class="item--c"><label id="p30">&gt;30min</label></a>
+                                </li>
+                            </ol>
+                        </li>
+                        
+                        <li class="menu-item">
+                            <a href="#" class="categ">
+                                <i class="fa-solid fa-utensils"></i>
+                                <span>Categorie</span>
+                            </a>
+                            <ol class="sub-menu">
+                                <li class="menu-item item--a">
+                                    <a href="#" class="item--a"><label id="md">Mic-dejun</label></a>
+                                </li>
+                                <li class="menu-item item--b">
+                                    <a href="#" class="item--b"><label id="pz">Prânz</label></a>
+                                </li>
+                                <li class="menu-item item--c">
+                                    <a href="#" class="item--c"><label id="cn">Cină</label></a>
+                                </li>
+                                <li class="menu-item item--d">
+                                    <a href="#" class="item--d"><label id="gst">Gustări</label></a>
+                                </li>
+                            </ol>
+                        </li>
+                        
+                        <li class="menu-item">
+                            <a href="#" class="td">
+                                <i class="fa-solid fa-seedling"></i>
+                                <span>Tip dietă</span>
+                            </a>
+                            <ol class="sub-menu">
+                                <li class="menu-item item--a">
+                                    <a href="#" class="item--a"><label id="vgt">Vegetarian</label></a>
+                                </li>
+                                <li class="menu-item item--b">
+                                    <a href="#" class="item--b"><label id="vg">Vegan</label></a>
+                                </li>
+                                <li class="menu-item item--c">
+                                    <a href="#" class="item--c"><label id="hp">High-protein</label></a>
+                                </li>
+                                <li class="menu-item item--d">
+                                    <a href="#" class="item--d"><label id="lc">Low-carb</label></a>
+                                </li>
+                            </ol>
+                        </li>
+                        
+                        <li class="menu-item">
+                            <a href="#" class="resetare">
+                                <i class="fa-solid fa-arrow-rotate-left"></i>
+                                <span>Resetare</span>
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+             </div>
+        </section>
+    </body>
+</html>
